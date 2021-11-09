@@ -48,5 +48,5 @@ app.use("/api", orderRoutes);
 app.use("/api", adminOrderRoutes);
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log(`server is runing on post ${process.env.PORT}`);
+  console.log(`Server is running on port ${process.env.PORT}`);
 });
