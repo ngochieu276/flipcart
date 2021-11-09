@@ -11,6 +11,7 @@ const mongoose = require("mongoose");
 const adminRoutes = require("./routes/admin/auth");
 const userRoutes = require("./routes/auth");
 const categoryRoutes = require("./routes/category");
+const adminOrderRoutes = require("./routes/admin/order");
 const productRoutes = require("./routes/product");
 const cartRoutes = require("./routes/cart");
 const initialDataRoutes = require("./routes/admin/initialData");
@@ -43,6 +44,7 @@ app.use("/api", initialDataRoutes);
 app.use("/api", pageRoutes);
 app.use("/api", addressRoutes);
 app.use("/api", orderRoutes);
+app.use("/api", adminOrderRoutes);
 
 app.listen(3000, () => {
   console.log(`server is runing on post ${process.env.PORT}`);

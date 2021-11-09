@@ -20,6 +20,8 @@ const {
   createProduct,
   getProductsBySlug,
   getProductDetailsById,
+  deleteProductById,
+  getProducts,
 } = require("../controller/product");
 
 router.post(
@@ -32,6 +34,19 @@ router.post(
 router.get("/products/:slug", getProductsBySlug);
 
 router.get("/product/:productId", getProductDetailsById);
+
+router.delete(
+  "/product/deleteProductById",
+  requireSignin,
+  adminMiddleware,
+  deleteProductById
+);
+router.post(
+  "/product/getProducts",
+  requireSignin,
+  adminMiddleware,
+  getProducts
+);
 
 // router.get("/category/getCategory", getCategories);
 

@@ -38,6 +38,27 @@ const orderSchema = new mongoose.Schema(
       required: true,
       enum: ["pending", "completed", "cancelled", "refund"],
     },
+    paymentType: {
+      type: String,
+      required: true,
+      enum: ["cod", "card"],
+    },
+    orderStatus: [
+      {
+        type: {
+          type: String,
+          enum: ["ordered", "packed", "shipped", "delivered"],
+          default: "order",
+        },
+        date: {
+          type: Date,
+        },
+        isCompleted: {
+          type: Boolean,
+          default: false,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );
