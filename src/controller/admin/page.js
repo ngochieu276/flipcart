@@ -4,13 +4,13 @@ exports.createPage = (req, res) => {
 
   if (banners.length > 0) {
     req.body.banners = banners.map((banner, index) => ({
-      img: `/public/${banner.filename}`,
+      img: `${banner.filename}`,
       navigateTo: `/bannerClicked?categoryId=${req.body.category}&type=${req.body.type}`,
     }));
   }
   if (products.length > 0) {
     req.body.products = products.map((product, index) => ({
-      img: `/public/${product.filename}`,
+      img: `${product.filename}`,
       navigateTo: `/productClicked?categoryId=${req.body.category}&type=${req.body.type}`,
     }));
   }
